@@ -9,13 +9,13 @@ $entries = array(
     array(
         "title" => "Monitor 1",
         "description" => "This is the first article's description",
-        "link" => "http://rumble.me"
+        "link" => "http://rumble.me",
         "pubDate" => (string)date("D, d M Y H:i:s T")
     ),
     array(
         "title" => "My second test entry",
         "description" => "This is the second article's description",
-        "link" => "http://leolabs.org/my-second-article-url"
+        "link" => "http://leolabs.org/my-second-article-url",
         "pubDate" => (string)date("D, d M Y H:i:s T")
 
 );
