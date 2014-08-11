@@ -7,16 +7,16 @@ $xml->addAttribute("version", "2.0");
 
 $entries = array(
     array(
-        "title" => "My first test entry",
+        "title" => "Monitor 1",
         "description" => "This is the first article's description",
-        "link" => "http://leolabs.org/my-first-article-url"
-        "pubDate" => date("D, d M Y H:i:s T")
+        "link" => "http://rumble.me"
+        "pubDate" => (string)date("D, d M Y H:i:s T")
     ),
     array(
         "title" => "My second test entry",
         "description" => "This is the second article's description",
         "link" => "http://leolabs.org/my-second-article-url"
-        "pubDate" => date("D, d M Y H:i:s T")
+        "pubDate" => (string)date("D, d M Y H:i:s T")
 
 );
 
