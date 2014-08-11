@@ -5,12 +5,6 @@ $xml = new SimpleXMLElement('<rss/>');
 $xml->addAttribute("version", "2.0");
 $mydate = date(DATE_RFC2822);
 
-$element = array(
-        "title" => $mydate,
-        "description" => "Monitor" .  $mydate,
-        "link" => "http://rumble.me",
-        "pubDate" => $mydate
-    );
 
 
 $entries = array(
@@ -41,8 +35,7 @@ foreach ($entries as $entry) {
     $item->addChild("pubDate", $entry['pubDate']);
 }
 
-echo $xml->asXML(rss.xml);
+$xml->asXML(rss.xml);
 
-array_push($entries, $element)
 
 ?>
