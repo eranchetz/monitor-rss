@@ -5,7 +5,20 @@ $xml = new SimpleXMLElement('<rss/>');
 $xml->addAttribute("version", "2.0");
 $mydate = date(DATE_RFC2822);
 
+// Create connection
+$con=mysqli_connect("us-cdbr-azure-east-a.cloudapp.net","b3db07afe6807b","6ac3a450","monitorrssfors5");
 
+// Check connection
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+$result = mysqli_query($con,"SELECT * FROM post WHERE pubDate <= CURDATE() ORDER BY pubDate DESC LIMIT 10'");
+
+while($row = mysqli_fetch_array($result)) {
+  echo $row['title'] . " " . $row['description'] . " " . $row['pubDate'];
+  echo "<br>";
+}
 
 $entries = array(
     array(
