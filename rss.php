@@ -10,17 +10,14 @@ $entries = array(
         "title" => "My first test entry",
         "description" => "This is the first article's description",
         "link" => "http://leolabs.org/my-first-article-url"
+        "pubDate" => date("D, d M Y H:i:s T")
     ),
     array(
         "title" => "My second test entry",
         "description" => "This is the second article's description",
         "link" => "http://leolabs.org/my-second-article-url"
-    ),
-    array(
-        "title" => "My third test entry",
-        "description" => "This is the third article's description",
-        "link" => "http://leolabs.org/my-third-article-url"
-    )
+        "pubDate" => date("D, d M Y H:i:s T")
+
 );
 
 
@@ -39,6 +36,7 @@ foreach ($entries as $entry) {
     $item->addChild("title", $entry['title']);
     $item->addChild("link", $entry['link']);
     $item->addChild("description", $entry['description']);
+    $item->addChild("pubDate", $entry['pubDate']);
 }
 
 echo $xml->asXML();
