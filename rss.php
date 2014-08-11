@@ -3,20 +3,20 @@ header("Content-Type: application/rss+xml; charset=UTF-8");
  
 $xml = new SimpleXMLElement('<rss/>');
 $xml->addAttribute("version", "2.0");
-
+$mydate = date(DATE_RFC2822);
 
 $entries = array(
     array(
         "title" => "Monitor 1",
         "description" => "This is the first article's description",
         "link" => "http://rumble.me",
-        "pubDate" => date("D, d M Y H:i:s T")
+        "pubDate" => $mydate
     ),
     array(
         "title" => "My second test entry",
         "description" => "This is the second article's description",
         "link" => "http://leolabs.org/my-second-article-url",
-        "pubDate" => date("D, d M Y H:i:s T")
+        "pubDate" => $mydate
 
 );
 
