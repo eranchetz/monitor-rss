@@ -1,3 +1,4 @@
+ <?php  
 header("Content-Type: application/rss+xml; charset=UTF-8");
  
 $xml = new SimpleXMLElement('<rss/>');
@@ -41,3 +42,6 @@ foreach ($entries as $entry) {
 }
 
 echo $xml->asXML();
+
+
+?>
