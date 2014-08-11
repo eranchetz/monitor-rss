@@ -35,7 +35,7 @@ foreach ($entries as $entry) {
     $item->addChild("pubDate", $entry['pubDate']);
 }
 
-$xml->asXML(rss.xml);
+$xml->asXML('rss.xml');
 
 
 ?>
