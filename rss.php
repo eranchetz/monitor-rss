@@ -7,16 +7,10 @@ $mydate = date(DATE_RFC2822);
 
 $entries = array(
     array(
-        "title" => "Monitor 1",
-        "description" => "This is the first article's description",
+        "title" => $mydate,
+        "description" => "Monitor" .  $mydate,
         "link" => "http://rumble.me",
         "pubDate" => $mydate
-    ),
-    array(
-        "title" => "My second test entry",
-        "description" => "This is the second article's description",
-        "link" => "http://leolabs.org/my-second-article-url",
-        "pubDate" => "date"
     )
 );
 
