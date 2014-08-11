@@ -10,7 +10,7 @@ $element = array(
         "description" => "Monitor" .  $mydate,
         "link" => "http://rumble.me",
         "pubDate" => $mydate
-    )
+    );
 
 
 $entries = array(
