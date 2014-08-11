@@ -25,9 +25,9 @@ $entries = array(
 
 $channel = $xml->addChild("channel");
  
-$channel->addChild("title", "Your feed title");
+$channel->addChild("title", "Monitor S5 rss");
 $channel->addChild("link", "Your website's uri");
-$channel->addChild("description", "Describe your feed");
+$channel->addChild("description", "This feed is used to monitor S5 feed processing");
 $channel->addChild("language", "en-us");
 
 
@@ -41,7 +41,7 @@ foreach ($entries as $entry) {
     $item->addChild("pubDate", $entry['pubDate']);
 }
 
-echo $xml->asXML();
+echo $xml->asXML(rss.xml);
 
 array_push($entries, $element)
 
