@@ -9,7 +9,7 @@ $entries = array(
     array(
         "title" => "Monitor 1",
         "description" => "This is the first article's description",
-        "link" => "http://rumble.me"
+        "link" => "http://rumble.me",
         "pubDate" => "date"
     ),
     array(
