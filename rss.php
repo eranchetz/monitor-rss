@@ -17,7 +17,7 @@ $entries = array(
         "description" => "This is the second article's description",
         "link" => "http://leolabs.org/my-second-article-url",
         "pubDate" => "date"
-
+    )
 );
 
 
