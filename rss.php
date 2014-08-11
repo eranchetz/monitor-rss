@@ -10,7 +10,7 @@ $entries = array(
         "title" => "Monitor 1",
         "description" => "This is the first article's description",
         "link" => "http://rumble.me",
-        "pubDate" => "date"
+        "pubDate" => $mydate
     ),
     array(
         "title" => "My second test entry",
