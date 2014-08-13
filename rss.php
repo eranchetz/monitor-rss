@@ -14,7 +14,7 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$result = mysqli_query($con,"SELECT * FROM monitorrssfors5.post WHERE pubDate <= CURDATE() ORDER BY pubDate DESC LIMIT 30;");
+$result = mysqli_query($con,"SELECT * FROM monitorrssfors5.post ORDER BY pubDate DESC LIMIT 30;");
 
 
 
@@ -27,8 +27,8 @@ $channel->addChild("language", "en-us");
 
 
 while($row = mysqli_fetch_array($result)) {
- echo $row['title'];
-   $item = $channel->addChild("item");
+
+  $item = $channel->addChild("item");
   $item->addChild("title", $row['title']);
   $item->addChild("link", "http://rumble.me");
   $item->addChild("description", $row['description']);
