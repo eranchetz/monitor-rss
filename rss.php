@@ -27,6 +27,7 @@ $channel->addChild("language", "en-us");
 
 
 while($row = mysqli_fetch_array($result)) {
+ echo $row['title'];
    $item = $channel->addChild("item");
   $item->addChild("title", $row['title']);
   $item->addChild("link", "http://rumble.me");
