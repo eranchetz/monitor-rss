@@ -1,5 +1,5 @@
  <?php  
- 
+ //You can see the content of this page here : http://monitor-rss-prod-rumble.azurewebsites.net/rss.xml
 header("Content-Type: application/rss+xml; charset=UTF-8");
  
 $xml = new SimpleXMLElement('<rss/>');
