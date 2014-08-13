@@ -14,7 +14,7 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$result = mysqli_query($con,"SELECT * FROM post WHERE monitorrssfors5.pubDate <= CURDATE() ORDER BY pubDate DESC LIMIT 10");
+$result = mysqli_query($con,"SELECT * FROM post  LIMIT 10");
 echo "sql query:";
 while($row = mysqli_fetch_array($result)) {
   echo $row['title'] . " " . $row['description'] . " " . $row['pubDate'];
