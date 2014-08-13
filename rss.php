@@ -29,7 +29,7 @@ $channel->addChild("language", "en-us");
 while($row = mysqli_fetch_array($result)) {
    $item = $channel->addChild("item");
   $item->addChild("title", $row['title']);
-  //$item->addChild("link", $entry['link']);
+  $item->addChild("link", "http://rumble.me");
   $item->addChild("description", $row['description']);
   $item->addChild("pubDate", $row['description']);
  
