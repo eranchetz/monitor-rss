@@ -15,20 +15,7 @@ if (mysqli_connect_errno()) {
 }
 
 $result = mysqli_query($con,"SELECT * FROM monitorrssfors5.post WHERE pubDate <= CURDATE() ORDER BY pubDate DESC LIMIT 30;");
-echo "sql query:";
-while($row = mysqli_fetch_array($result)) {
-  echo $row['title'] . " " . $row['description'] . " " . $row['pubDate'];
-  echo "<br>";
-}
 
-$entries = array(
-    array(
-        "title" => $mydate,
-        "description" => "Monitor" .  $mydate,
-        "link" => "http://rumble.me",
-        "pubDate" => $mydate
-    )
-);
 
 
 $channel = $xml->addChild("channel");
@@ -39,15 +26,15 @@ $channel->addChild("description", "This feed is used to monitor S5 feed processi
 $channel->addChild("language", "en-us");
 
 
-
-foreach ($entries as $entry) {
-    $item = $channel->addChild("item");
+while($row = mysqli_fetch_array($result)) {
+   $item = $channel->addChild("item");
+  $item->addChild("title", $row['title']);
+  //$item->addChild("link", $entry['link']);
+  $item->addChild("description", $row['description']);
+  $item->addChild("pubDate", $row['pubDate']);
  
-    $item->addChild("title", $entry['title']);
-    $item->addChild("link", $entry['link']);
-    $item->addChild("description", $entry['description']);
-    $item->addChild("pubDate", $entry['pubDate']);
 }
+
 
 $xml->asXML('rss.xml');
 
