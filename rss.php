@@ -31,7 +31,7 @@ while($row = mysqli_fetch_array($result)) {
   $item->addChild("title", $row['title']);
   //$item->addChild("link", $entry['link']);
   $item->addChild("description", $row['description']);
-  $item->addChild("pubDate", $row['pubDate']);
+  $item->addChild("pubDate", $row['description']);
  
 }
 
