@@ -15,7 +15,7 @@ if (mysqli_connect_errno()) {
 }
 
 $result = mysqli_query($con,'SELECT * FROM post WHERE monitorrssfors5.pubDate <= CURDATE() ORDER BY pubDate DESC LIMIT 10');
-echo "sql query:"
+echo "sql query:";
 while($row = mysqli_fetch_array($result)) {
   echo $row['title'] . " " . $row['description'] . " " . $row['pubDate'];
   echo "<br>";
