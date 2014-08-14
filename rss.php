@@ -30,10 +30,9 @@ while($row = mysqli_fetch_array($result)) {
 
   $item = $channel->addChild("item");
   $item->addChild("title", $row['title']);
-  $item->addChild("link", "http://rumble.me");
+  $item->addChild("link", "http://rumble.me/?" . mt_rand());
   $item->addChild("description", $row['description']);
   $item->addChild("pubDate", $row['description']);
-  $item->addChild("content:encoded", $row['title']);
   
 }
 
