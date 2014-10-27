@@ -1,4 +1,4 @@
 monitor-rss
 ===========
 
-test rss to monitor Rumble S5 Service
+Tools to monitor rss for Rumble S5/S10 Service services
