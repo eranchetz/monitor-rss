@@ -33,7 +33,7 @@ while($row = mysqli_fetch_array($result)) {
   $item->addChild("link", "http://rumble.me/?" . mt_rand());
   $item->addChild("description", $row['description']);
   $item->addChild("pubDate", $row['description']);
-  
+  $item->addChild("guid", "<![CDATA[". com_create_guid() ."]]>");
 }
 
 
