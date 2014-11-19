@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script uses a sytetic title feed and calculates the gap between timenow and timein last item in feed
+# This script uses a syntetic title feed and calculates the gap between timenow and timein last item in feed
 #Run the script with the debug parameter to get more info ( ./check_content_update.sh debug)
 # http://rumblenews.blob.core.windows.net/data2/536/getSItems.json
 # CDN http://az337102.vo.msecnd.net/data2/536/getSItems.json
@@ -11,16 +11,19 @@ EPOCHRSS2=`curl  -s  'http://rumblenews.blob.core.windows.net/data2/536/getSItem
 
 EPOCHNOW=`date +"%s"`
 
-#echo $EPOCHRSS2 $EPOCHRSS1 $EPOCHNOW
-
-GAP=`expr $EPOCHNOW - $EPOCHRSS1`
-GAP2=`expr $EPOCHNOW - $EPOCHRSS2`
+if [ -z "$EPOCHRSS2" ] ; then
+  GAP=`expr $EPOCHNOW - $EPOCHRSS1`
+  GAP2=999999
+else
+  GAP=`expr $EPOCHNOW - $EPOCHRSS1`
+  GAP2=`expr $EPOCHNOW - $EPOCHRSS2`
+fi
 
 if [ $DEBUG ]  ; then echo "GapSItems : $GAP GapSItmesI : $GAP2"
 
 fi
 if [ $GAP -lt $GAP2 ];then
-	echo " ${GAP}"
+        echo " ${GAP}"
 else
-	echo "${GAP2}"
+        echo "${GAP2}"
 fi
