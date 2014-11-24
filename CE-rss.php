@@ -33,7 +33,7 @@ while($row = mysqli_fetch_array($result)) {
   $item->addChild("link", "http://rumble.me/?CE");
   $item->addChild("description", $row['description']);
   $item->addChild("pubDate", $row['description']);
-  $item->addChild("guid", "<![CDATA["1337"]]>");
+  $item->addChild("guid", "<![CDATA[1337]]>");
 }
 
 
